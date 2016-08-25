@@ -6,7 +6,25 @@
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+A game of tic tac toe made with JavaScript!
+
+## Specifications
+
+* At the start of each game a new "game board" is created with points associated with each square.
+ * Input: Game start
+ * Output: A game board with the following values [8 1 6, 3 5 7, 4 9 2]
+
+* When a player "marks" a square, the points associated with that square is then "moved" to that player's score card and removed from the game board.
+ * Input: Player selects square 0,0 (value of 8 points)
+ * Output: Game board [0 1 6, 3 5 7, 4 9 2], Player score card [8 0 0, 0 0 0, 0 0 0]
+
+* The numbers on the grid will be added by horizontal, vertical, and diagonal lines
+  * Input: Player score card [8 0 0, 0 5 0, 0 9 2]
+  * Output: 8, 5, 11, 8, 14, 2, 15, 5
+
+* If any of the grid sums equal 15, then the player with that score card is designated the winner
+  * Input: Player 1's scorecard sums are 8, 5, 11, 8, 14, 2, 15, 5
+  * Output: "Player 1 is the Winner!"
 
 ## Setup/Installation Requirements
 
