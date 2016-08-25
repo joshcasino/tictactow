@@ -5,9 +5,10 @@ function Game() {
   this.playerUp = 1;
   this.winner = 0;
 }
-function Player(playerNum) {
+function Player(playerNum, playerName) {
   this.number = playerNum;
   this.scoreCard = [[0, 0, 0],[0, 0, 0],[0, 0, 0]];
+  this.playerName = playerName;
 }
 function markSquare(x, y, playerNum) {
   myGame.players[playerNum].scoreCard[x][y] = myGame.board[x][y];
@@ -40,10 +41,12 @@ function checkWinner(playerNum) {
     announceWinner(playerNum);
   }
 }
-
-var myGame = new Game();
-myGame.players[1] = new Player(1);
-myGame.players[2] = new Player(2);
+function resetGame() {
+  myGame = new Game();
+  myGame.players[1] = new Player(1, "Charles Bukowski");
+  myGame.players[2] = new Player(2, "William S. Burroughs");
+}
+resetGame();
 // Frontend code
 $(document).ready(function() {
   $(".ticSquare").click(function() {
@@ -57,7 +60,12 @@ $(document).ready(function() {
     var coordY = parseInt($(this).attr("id").substring(1,2));
     markSquare(coordX, coordY, myGame.playerUp);
   });
+  $("#resetButton").click(function() {
+    $("#winnerFlag").text("");
+    $(".ticSquare").removeClass("squareMarked ticSquarePlayer1 ticSquarePlayer2");
+    resetGame();
+  });
 });
 function announceWinner(playerNum) {
-  $("#winnerFlag").text("Player " + playerNum + " is the winner!");
+  $("#winnerFlag").text(myGame.players[playerNum].playerName + " is the winner!");
 }
