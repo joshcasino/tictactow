@@ -1,0 +1,10 @@
+.ticSquare {
+  min-height: 200px;
+  width: 200px;
+}
+.ticSquarePlayer1 {
+  background-color: #f55;
+}
+.ticSquarePlayer2 {
+  background-color: #69f;
+}

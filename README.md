@@ -26,6 +26,25 @@ A game of tic tac toe made with JavaScript!
   * Input: Player 1's scorecard sums are 8, 5, 11, 8, 14, 2, 15, 5
   * Output: "Player 1 is the Winner!"
 
+* At the start of the game, an empty 3x3 grid is presented
+  * Input: Game start
+  * Output: A blank 3x3 grid
+
+* When Player 1 clicks on a square, that square is marked
+  * Input: Player 1 clicks on grid 0,0
+  * Output: Grid 0,0 turns Red
+
+* When Player 2 then clicks on another square, that square is marked
+  * Input: Player 2 clicks on grid 0,1
+  * Output: Grid 0,1 turns Blue
+
+* When Player 1 next clicks on a square "claimed" by Player 2, nothing happens
+  * Input: Player 1 clicks on grid 0,1
+  * Output: Grid 0,1 remains Blue
+
+
+
+
 ## Setup/Installation Requirements
 
 * _This is a great place_

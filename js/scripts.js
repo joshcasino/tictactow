@@ -3,6 +3,7 @@ function Game() {
   this.board = [[8,1,6],[3,5,7],[4,9,2]];
   this.players = [];
   this.playerUp = 1;
+  this.winner = 0;
 }
 function Player(playerNum) {
   this.number = playerNum;
@@ -37,11 +38,23 @@ function checkWinner(playerNum) {
   if (subTotals.includes(15)) {
     myGame.winner = playerNum;
     alert("Player " + playerNum + " wins.");
-    console.log(subTotals);
   }
 }
 
-myGame = new Game();
+var myGame = new Game();
 myGame.players[1] = new Player(1);
 myGame.players[2] = new Player(2);
 // Frontend code
+$(document).ready(function() {
+  $(".ticSquare").click(function() {
+    if ($(this).hasClass("squareMarked") || myGame.winner !== 0) {
+      return;
+    }
+    var squareColorClass = "ticSquarePlayer" + myGame.playerUp;
+    $(this).addClass("squareMarked");
+    $(this).addClass(squareColorClass);
+    var coordX = parseInt($(this).attr("id").substring(0,1));
+    var coordY = parseInt($(this).attr("id").substring(1,2));
+    markSquare(coordX, coordY, myGame.playerUp);
+  });
+});
