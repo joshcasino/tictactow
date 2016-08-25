@@ -37,7 +37,7 @@ function checkWinner(playerNum) {
   subTotals.push(myGame.players[playerNum].scoreCard[2][0] + myGame.players[playerNum].scoreCard[1][1] + myGame.players[playerNum].scoreCard[0][2]);
   if (subTotals.includes(15)) {
     myGame.winner = playerNum;
-    alert("Player " + playerNum + " wins.");
+    announceWinner(playerNum);
   }
 }
 
@@ -58,3 +58,6 @@ $(document).ready(function() {
     markSquare(coordX, coordY, myGame.playerUp);
   });
 });
+function announceWinner(playerNum) {
+  $("#winnerFlag").text("Player " + playerNum + " is the winner!");
+}

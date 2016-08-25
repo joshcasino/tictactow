@@ -1,6 +1,7 @@
 .ticSquare {
   min-height: 200px;
   width: 200px;
+  border: 5px solid #666;
 }
 .ticSquarePlayer1 {
   background-color: #f55;

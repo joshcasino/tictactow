@@ -42,6 +42,13 @@ A game of tic tac toe made with JavaScript!
   * Input: Player 1 clicks on grid 0,1
   * Output: Grid 0,1 remains Blue
 
+* Once a player wins, a message is displayed, and no more moves are allowed
+  * Input: Player 1 wins
+  * Output: Message "player 1 wins" is displayed and further clicking changes no tile colors
+
+* The user can reset the game.
+  * Input: User clicks on the "Reset Game" button
+  * Output: Game grid is reset
 
 
 
